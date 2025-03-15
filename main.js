@@ -111,8 +111,22 @@ function initMobileMenu() {
     }
 }
 
+// Form validation for contact form
+function initContactForm() {
+    const contactForm = document.querySelector('#contact-container form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Here you would normally send the form data to a server
+            alert('Votre message a été envoyé avec succès!');
+            contactForm.reset();
+        });
+    }
+}
+
 // Call this when the DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     initCosmicElements();
     initMobileMenu();
+    initContactForm();
 });
