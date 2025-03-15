@@ -1,56 +1,42 @@
-<nav class="container mx-auto px-4 py-6 flex items-center justify-between">
-    <div class="flex items-center">
-        <img src="logo-appstronaute-blanc.png" alt="Appstronaute Logo" class="h-10 mr-8">
-        <div class="hidden md:flex space-x-6">
-            <div class="dropdown relative group">
-                <button class="flex items-center space-x-1">
-                    <span>Services Web2</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1"><path d="m6 9 6 6 6-6"/></svg>
-                </button>
-                <div class="dropdown-menu">
-                    <a href="#" class="block px-4 py-2 hover:bg-light-purple">Service 1</a>
-                    <a href="#" class="block px-4 py-2 hover:bg-light-purple">Service 2</a>
-                    <a href="#" class="block px-4 py-2 hover:bg-light-purple">Service 3</a>
-                </div>
+<!-- Header -->
+<header class="py-4 shadow-sm bg-white">
+    <div class="container mx-auto px-4">
+        <nav class="flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="#" class="flex items-center space-x-2">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-appstronaute-blanc-VWZiUcrV8kGz1g9ixa56BmlgD11HTt.png" alt="CyberLabs Logo" class="h-10">
+                </a>
             </div>
-            <div class="dropdown relative group">
-                <button class="flex items-center space-x-1">
-                    <span>Services Web3</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1"><path d="m6 9 6 6 6-6"/></svg>
-                </button>
-                <div class="dropdown-menu">
-                    <a href="#" class="block px-4 py-2 hover:bg-light-purple">Service 1</a>
-                    <a href="#" class="block px-4 py-2 hover:bg-light-purple">Service 2</a>
-                    <a href="#" class="block px-4 py-2 hover:bg-light-purple">Service 3</a>
+            
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#" class="text-dark hover:text-teal transition duration-200">Accueil</a>
+                <div class="dropdown relative">
+                    <a href="#" class="text-dark hover:text-teal transition duration-200 flex items-center">
+                        Services
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-light">Développement Mobile</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-light">Développement Web</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-light">Conseil IT</a>
+                    </div>
                 </div>
+                <a href="#" class="text-dark hover:text-teal transition duration-200">Portfolio</a>
+                <a href="#" class="text-dark hover:text-teal transition duration-200">Blog</a>
+                <a href="#" class="text-dark hover:text-teal transition duration-200">Contact</a>
             </div>
-            <div class="dropdown relative group">
-                <button class="flex items-center space-x-1">
-                    <span>À propos</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1"><path d="m6 9 6 6 6-6"/></svg>
-                </button>
-                <div class="dropdown-menu">
-                    <a href="#" class="block px-4 py-2 hover:bg-light-purple">Notre équipe</a>
-                    <a href="#" class="block px-4 py-2 hover:bg-light-purple">Notre histoire</a>
-                </div>
-            </div>
-            <a href="#" class="hover:text-brand-purple">Ressources</a>
-        </div>
+            
+            <a href="#" class="hidden md:block bg-gradient-teal text-white px-6 py-2 rounded-full font-medium hover:shadow-lg transition duration-300">
+                Demander un devis
+            </a>
+            
+            <button class="md:hidden focus:outline-none" id="menu-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </nav>
     </div>
-    <div class="flex items-center space-x-4">
-        <div class="flex items-center dropdown relative">
-            <span class="mr-1">FR</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-            <div class="dropdown-menu">
-                <a href="#" class="block px-4 py-2 hover:bg-light-purple">EN</a>
-            </div>
-        </div>
-        <button class="gradient-btn text-white px-6 py-2 rounded-full text-sm font-medium">
-            NOUS CONTACTER
-        </button>
-        <!-- Mobile menu button -->
-        <button class="md:hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-        </button>
-    </div>
-</nav>
+</header>

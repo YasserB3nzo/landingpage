@@ -37,26 +37,28 @@ function initAnimations() {
 
 // Function to initialize Swiper
 function initSwiper() {
-    const swiper = new Swiper('.testimonialSwiper', {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        loop: true,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        breakpoints: {
-            640: {
-                slidesPerView: 1,
+    if (typeof Swiper !== 'undefined') {
+        const swiper = new Swiper('.testimonialSwiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
             },
-            768: {
-                slidesPerView: 2,
+            breakpoints: {
+                640: {
+                    slidesPerView: 1,
+                },
+                768: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
             },
-            1024: {
-                slidesPerView: 3,
-            },
-        },
-    });
+        });
+    }
 }
 
 // Function to initialize cosmic elements
@@ -67,13 +69,13 @@ function initCosmicElements() {
     // Clear any existing elements
     cosmicContainer.innerHTML = '';
     
-    // Create floating teal elements
+    // Create floating teal elements (more subtle for light theme)
     for (let i = 0; i < 8; i++) {
         const element = document.createElement('div');
         element.className = 'cosmic-element';
         
-        // Random size between 100px and 300px
-        const size = Math.random() * 200 + 100;
+        // Random size between 100px and 400px
+        const size = Math.random() * 300 + 100;
         element.style.width = `${size}px`;
         element.style.height = `${size}px`;
         
@@ -91,13 +93,26 @@ function initCosmicElements() {
     }
 }
 
-// Initialize stars background
-function initStarsBackground() {
-    // This function will be called on page load
-    // The stars are created with CSS, so we don't need to do anything here
+// Mobile menu toggle
+function initMobileMenu() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.querySelector('nav .hidden.md\\:flex');
+    
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', () => {
+            if (mobileMenu.classList.contains('flex')) {
+                mobileMenu.classList.remove('flex');
+                mobileMenu.classList.add('hidden');
+            } else {
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.classList.add('flex');
+            }
+        });
+    }
 }
 
 // Call this when the DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-    initStarsBackground();
+    initCosmicElements();
+    initMobileMenu();
 });

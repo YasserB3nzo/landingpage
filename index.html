@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CYBERLAB'S</title>
+    <title>CyberLabs</title>
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Swiper CSS -->
@@ -14,6 +14,11 @@
     <script src="tailwind-config.js"></script>
 </head>
 <body>
+    <!-- Background Animation -->
+    <div class="space-background">
+        <div class="cosmic-elements"></div>
+    </div>
+
     <!-- Navigation -->
     <div id="header-container"></div>
 
@@ -45,6 +50,9 @@
             loadComponent('estimation-container', 'component-estimation.html');
             loadComponent('testimonials-container', 'component-testimonials.html');
             loadComponent('footer-container', 'component-footer.html');
+            
+            // Initialize cosmic elements
+            initCosmicElements();
         });
     </script>
 </body>
