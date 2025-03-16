@@ -97,7 +97,7 @@ body {
 
 /* Brand colors */
 .text-brand-teal {
-    color: #02584B; /* Main teal color */
+    color: #037c70; /* Main teal color */
 }
 
 .bg-brand-teal {
@@ -407,4 +407,33 @@ body {
     .bg-dark h2 {
         font-size: 2rem;
     }
+}
+
+/* Portfolio section styles */
+.portfolio-container h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #FFFFFF !important;
+}
+
+.portfolio-container .project {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background-color: rgba(3, 124, 112, 0.1);
+}
+
+.portfolio-container .project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio-container .project img {
+    transition: transform 0.5s ease;
+}
+
+.portfolio-container .project:hover img {
+    transform: scale(1.05);
 }
