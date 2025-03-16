@@ -1,6 +1,6 @@
 /* Base styles */
 body {
-    background-color: #02584B; /* Teal background */
+    background-color: #02584B !important; /* Teal background */
     color: #FFFFFF; /* White text for readability on teal */
     font-family: 'Inter', sans-serif;
 }
@@ -8,13 +8,12 @@ body {
 /* Gradient button */
 .gradient-btn {
     background: linear-gradient(90deg, #02584B 0%, #037c70 100%);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
     color: white;
 }
 
 .gradient-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(2, 88, 75, 0.3);
 }
 
 /* Dropdown menu */
@@ -98,7 +97,7 @@ body {
 
 /* Brand colors */
 .text-brand-teal {
-    color: #037c70; /* Main teal color */
+    color: #02584B; /* Main teal color */
 }
 
 .bg-brand-teal {
@@ -304,259 +303,108 @@ body {
     color: #FFFFFF !important;
 }
 
-/* Add styles for "Comment ça marche" section */
-.comment-ca-marche-container {
-    padding: 4rem 0;
-    background-color: #02584B; /* Teal background */
-    color: #FFFFFF; /* White text for readability */
-    text-align: center;
-}
-
-.comment-ca-marche-container .step {
-    margin-bottom: 2rem;
-}
-
-.comment-ca-marche-container .step .icon-container {
-    margin-bottom: 1rem;
-}
-
-/* Add styles for Portfolio section */
-.portfolio-container {
-    padding: 4rem 0;
-    background-color: #037c70; /* Lighter teal background */
-    color: #FFFFFF; /* White text for readability */
-    text-align: center;
-}
-
-.portfolio-container .project {
-    background-color: #02584B; /* Teal background */
-    border-radius: 0.5rem;
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.portfolio-container .project img {
-    border-radius: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-.portfolio-container .project:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-}
-
-/* Ensure icons are properly sized and centered */
-.icon-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #036b5e;
-    border-radius: 50%;
-    width: 5rem;
-    height: 5rem;
-}
-
-.icon-container svg {
-    color: #FFFFFF;
-}
-
-/* NEW STYLES FOR ADDED COMPONENTS */
-
-/* Services Section Styles */
-.services-container {
-    padding: 4rem 0;
-    background-color: #02584B;
-}
-
-.services-container .feature-card {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.services-container .feature-card a {
-    margin-top: auto;
-}
-
-/* Portfolio Section Enhanced Styles */
-.portfolio-container .project {
-    background-color: #036b5e;
+/* Stats section with gradient background - exact match to image */
+.stats-gradient {
+    background: linear-gradient(90deg, #02584B 50%, #FFFFFF 200%);
+    position: relative;
     overflow: hidden;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
-.portfolio-container .project img {
-    height: 200px;
-    object-fit: cover;
-    width: 100%;
-    transition: transform 0.5s ease;
+.stats-item {
+    position: relative;
+    transition: transform 0.3s ease;
 }
 
-.portfolio-container .project:hover img {
-    transform: scale(1.05);
-}
-
-.portfolio-container .project .px-2 {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.portfolio-container .project a {
-    margin-top: auto;
-}
-
-/* Contact Section Styles */
-.contact-container {
-    padding: 4rem 0;
-    background-color: #02584B;
-}
-
-.contact-container input,
-.contact-container textarea {
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: white;
-    transition: all 0.3s ease;
-}
-
-.contact-container input:focus,
-.contact-container textarea:focus {
-    background-color: rgba(255, 255, 255, 0.15);
-    border-color: rgba(255, 255, 255, 0.5);
-    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
-}
-
-.contact-container input::placeholder,
-.contact-container textarea::placeholder {
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.contact-container .social-icons a {
-    transition: all 0.3s ease;
-}
-
-.contact-container .social-icons a:hover {
-    transform: translateY(-3px);
-}
-
-/* Comment ça marche Enhanced Styles */
-.comment-ca-marche-container .step {
-    transition: all 0.3s ease;
-}
-
-.comment-ca-marche-container .step:hover {
+.stats-item:hover {
     transform: translateY(-5px);
 }
 
-.comment-ca-marche-container .step .icon-container {
-    transition: all 0.3s ease;
+.stats-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 20%;
+    right: 0;
+    height: 60%;
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.3);
+    display: none;
 }
 
-.comment-ca-marche-container .step:hover .icon-container {
-    background-color: #037c70;
-    transform: scale(1.1);
+@media (min-width: 1024px) {
+    .stats-item:not(:last-child)::after {
+        display: block;
+    }
 }
 
-/* Responsive adjustments */
+/* Make sure text is white and bold for better visibility */
+.stats-gradient h2, 
+.stats-gradient p {
+    color: #FFFFFF !important;
+    font-weight: 600;
+}
+
+.stats-gradient h2 {
+    font-weight: 800;
+}
+
+/* Add animation to numbers */
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stats-item h2 {
+    animation: countUp 1s ease-out forwards;
+}
+
+.stats-item:nth-child(1) h2 {
+    animation-delay: 0.1s;
+}
+
+.stats-item:nth-child(2) h2 {
+    animation-delay: 0.2s;
+}
+
+.stats-item:nth-child(3) h2 {
+    animation-delay: 0.3s;
+}
+
+.stats-item:nth-child(4) h2 {
+    animation-delay: 0.4s;
+}
+
+/* About Us section styles */
+.bg-dark {
+    background-color: #011A17; /* Darker teal for background */
+}
+
+.text-teal-light {
+    color: #037c70; /* Lighter teal for accent text */
+}
+
+.border-teal-light {
+    border-color: #037c70; /* Lighter teal for borders */
+}
+
+/* About Us responsive styles */
 @media (max-width: 768px) {
-    .icon-container {
-        width: 4rem;
-        height: 4rem;
+    .bg-dark .grid {
+        grid-template-columns: 1fr;
     }
     
-    .contact-container .grid {
-        gap: 2rem;
+    .bg-dark .rounded-xl {
+        margin-bottom: 2rem;
     }
     
-    .portfolio-container .project img {
-        height: 180px;
+    .bg-dark h2 {
+        font-size: 2rem;
     }
-}
-
-/* Animation for services cards */
-.feature-card {
-    position: relative;
-    overflow: hidden;
-}
-
-.feature-card::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
-    transform: translateX(-100%);
-    transition: transform 0.6s ease;
-}
-
-.feature-card:hover::after {
-    transform: translateX(100%);
-}
-
-/* Testimonials enhanced styles */
-.testimonialSwiper .swiper-slide {
-    height: auto;
-}
-
-.testimonialSwiper .swiper-slide > div {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.testimonialSwiper .swiper-pagination {
-    bottom: 0;
-}
-
-/* Footer enhanced styles */
-footer {
-    position: relative;
-    overflow: hidden;
-}
-
-footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
-}
-
-footer a {
-    transition: color 0.3s ease;
-}
-
-footer a:hover {
-    color: #037c70 !important;
-}
-
-/* Estimation form enhanced styles */
-.custom-radio {
-    position: relative;
-}
-
-.custom-radio::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    width: 10px;
-    height: 10px;
-    background-color: white;
-    border-radius: 50%;
-    transition: transform 0.2s ease;
-}
-
-.custom-radio:checked::after {
-    transform: translate(-50%, -50%) scale(1);
 }
